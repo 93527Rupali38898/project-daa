@@ -1,55 +1,92 @@
-# Graph-Based Travel System using Dijkstra Algorithm (DAA Project)
+# Multi-Modal Travel Optimization System using Graph Algorithms (DAA Project)
 
-A Data Structures and Algorithms (DAA) project that models a transportation network using graph data structures and computes the optimal path between cities using Dijkstra’s Algorithm.
+A Data Structures and Algorithms (DAA) project that models a real-world transportation system using graph data structures and multiple algorithms to compute optimal travel routes.
 
 ---
 
 ## Overview
 
-This project simulates a real-world transportation system consisting of multiple cities connected through routes.
+This project simulates a **multi-modal transportation system** connecting cities through:
+
+* Train
+* Bus
+* Aeroplane
 
 The system allows users to:
 
-* Find the shortest path between cities
+* Find optimal routes between cities
 * Optimize travel based on cost or time
-* Select seat preferences (AC1, AC2, AC3, Sleeper, General)
-* View complete route details along with transport information
+* Handle flexible user input using string matching
+* Select travel preferences and classes
 
-The project includes two versions of implementation:
+Two versions of implementation are included:
 
-* `2023BTECH068.c` → Initial version (basic implementation)
-* `2023BTECH068_2.c` → Improved version with extended features and optimizations
+* `2023BTECH068.c` → Initial version
+* `2023BTECH068_2.c` → Updated version with advanced features and algorithms
 
 ---
 
 ## Problem Statement
 
-Given a network of cities and connections, the objective is to:
+Given a network of cities connected through multiple transport modes, the objective is to:
 
-* Determine the optimal route between source and destination
+* Determine the best route between source and destination
 * Minimize:
 
   * Travel cost
   * Travel time
-* Incorporate real-world constraints such as pricing and travel duration
+* Handle real-world constraints such as pricing and route variations
+* Improve user input handling and matching
 
 ---
 
 ## Key Features
 
-* Graph-based transportation network
-* Adjacency List representation
-* Dijkstra Algorithm for shortest path calculation
-* Dual optimization:
+* Multi-modal transport system:
 
-  * Cost-based path
-  * Time-based path
-* Multiple ticket classes:
+  * Train network
+  * Bus network
+  * Aeroplane network
+* Graph-based implementation using adjacency lists
+* Multiple optimization strategies
+* Class-based travel options:
 
-  * AC1, AC2, AC3
-  * Sleeper
-  * General
-* Additional functionality such as meal options
+  * Train → AC1, AC2, AC3, Sleeper, General
+  * Bus → AC / Non-AC
+  * Aeroplane → Economy / Business / First
+* Intelligent input handling using string matching
+
+---
+
+## Algorithms Used
+
+### 1. Dijkstra’s Algorithm
+
+* Used for shortest path computation
+* Optimizes:
+
+  * Cost
+  * Time
+
+---
+
+### 2. Bellman-Ford Algorithm
+
+* Handles more flexible graph conditions
+* Useful for:
+
+  * Edge case handling
+  * More generalized shortest path scenarios
+
+---
+
+### 3. Levenshtein Distance
+
+* Used for string matching
+* Helps in:
+
+  * Handling incorrect user input
+  * Matching similar city names
 
 ---
 
@@ -62,23 +99,12 @@ Given a network of cities and connections, the objective is to:
 
 ---
 
-## Algorithm Used
-
-### Dijkstra’s Algorithm
-
-Used for:
-
-* Shortest cost path
-* Minimum time path
-
----
-
 ## Project Structure
 
-```text
+```text id="final001"
 project-daa/
 │── 2023BTECH068.c        # Initial version
-│── 2023BTECH068_2.c      # Updated and improved version
+│── 2023BTECH068_2.c      # Updated version with multiple algorithms
 │── README.md
 ```
 
@@ -88,40 +114,54 @@ project-daa/
 
 ### 1. Clone the repository
 
-```bash
+```bash id="run201"
 git clone https://github.com/93527Rupali38898/project-daa.git
 cd project-daa
 ```
 
-### 2. Compile the program (recommended: latest version)
+### 2. Compile the program
 
-```bash
+```bash id="run202"
 gcc 2023BTECH068_2.c -o project
 ```
 
 ### 3. Run the program
 
-```bash
+```bash id="run203"
 ./project
 ```
 
 > On Windows:
 
-```bash
+```bash id="run204"
 project.exe
 ```
 
 ---
 
-## Sample Workflow
+## How It Works
 
-1. Enter source city
-2. Enter destination city
-3. Choose optimization:
+1. Select transport mode:
 
-   * 1 → Cost
-   * 2 → Time
-4. Select seat preference
+   * Train
+   * Bus
+   * Aeroplane
+
+2. Enter:
+
+   * Source city
+   * Destination city
+
+3. System:
+
+   * Matches input using Levenshtein Distance
+   * Applies shortest path algorithm (Dijkstra / Bellman-Ford)
+
+4. Choose optimization:
+
+   * Cost
+   * Time
+
 5. Output includes:
 
    * Route path
@@ -133,30 +173,30 @@ project.exe
 
 ## Example Output
 
-```
-Total Cost: 2500
-Time Taken: 5 hours 30 minutes
-Path: Delhi -> Jaipur -> Ahmedabad
+```id="out201"
+Total Cost: 5200
+Time Taken: 3 hours 20 minutes
+Path: Delhi -> Jaipur -> Mumbai
 ```
 
 ---
 
 ## Learning Outcomes
 
-* Practical implementation of graph data structures
-* Understanding of Dijkstra’s Algorithm in real-world scenarios
-* Handling optimization problems (cost vs time)
+* Implementation of graph algorithms in real-world systems
+* Understanding of Dijkstra and Bellman-Ford algorithms
+* Application of string matching using Levenshtein Distance
+* Multi-algorithm optimization techniques
 * Memory management in C
-* Improved problem-solving and logical thinking
 
 ---
 
 ## Future Improvements
 
-* Graphical User Interface (GUI)
-* Integration with real-time data
-* Dynamic input-based graph generation
-* Web or mobile application version
+* Combine all transport modes into a unified graph
+* Add real-time data integration
+* Develop GUI or web interface
+* Enhance algorithm selection dynamically
 
 ---
 
@@ -168,4 +208,4 @@ Rupali Goyal
 
 ## Note
 
-This project was developed as part of DAA (Design and Analysis of Algorithms) coursework and demonstrates the application of graph algorithms in transportation systems.
+This project demonstrates the integration of multiple algorithms (graph + string matching) to solve real-world transportation problems efficiently.
